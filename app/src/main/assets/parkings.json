@@ -1,0 +1,23 @@
+{
+    "data": [
+    	{
+             "latitude": 43.597781,
+             "longitude": 1.444807,
+             "title": "Parking des Carmes",
+             "type": "PARKING",
+             "content": ""
+             }, {
+             "latitude": 43.600511,
+             "longitude": 1.444767,
+             "title": "Parking Esquirol",
+             "type": "PARKING",
+             "content": ""
+             }, {
+             "latitude": 43.604013,
+             "longitude": 1.443878,
+             "title": "Parking du Capitole",
+             "type": "PARKING",
+             "content": ""
+             }
+         ]
+}
