@@ -6,6 +6,10 @@
     <string name="id_badge">client numéro 12234232</string>
     <string name="title_activity_nfc">NFCActivity</string>
     <string name="broadcast_notification_type">com.appstud.parking.MY_NOTIFICATION</string>
+    <string name="parking_name">Parking des Carmes</string>
+    <string name="parking_address">1 Place des Carmes, 31000 Toulouse, France</string>
+    <string name="parking_success">Succès !</string>
+    <string name="parking_barrier">La barrière va s\'ouvrir</string>
 
 </resources>
 

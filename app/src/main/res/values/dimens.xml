@@ -1,3 +1,6 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="parking_name_text_size">18sp</dimen>
+    <dimen name="parking_address_margin_top">8dp</dimen>
+    <dimen name="parking_success_big_icon_size">200dp</dimen>
 </resources>
