@@ -4,6 +4,8 @@
     <string name="servicedesc">servicedesc</string>
     <string name="aiddescription">aiddescription</string>
     <string name="id_badge">client numéro 12234232</string>
+    <string name="title_activity_nfc">NFCActivity</string>
+    <string name="broadcast_notification_type">com.appstud.parking.MY_NOTIFICATION</string>
 
 </resources>
 

@@ -1,5 +1,6 @@
 package com.appstud.parking;
 
+import android.content.Intent;
 import android.nfc.cardemulation.HostApduService;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,6 +15,7 @@ public class MyHostApduService extends HostApduService {
     public byte[] processCommandApdu(byte[] apdu, Bundle extras) {
         if (selectAidApdu(apdu)) {
             Log.i("HCEDEMO", OK);
+            alertApp();
             return getMessage();
         } else {
             Log.i("HCEDEMO", NOK + " Received apdu: " + new String(apdu));
@@ -36,5 +38,13 @@ public class MyHostApduService extends HostApduService {
     @Override
     public void onDeactivated(int reason) {
         Log.i("HCEDEMO", "Communication NFC Deactivated: " + reason);
+    }
+
+    private void alertApp() {
+        Intent intent = new Intent();
+        intent.setAction(getString(R.string.broadcast_notification_type));
+        sendBroadcast(intent);
+
+
     }
 }
