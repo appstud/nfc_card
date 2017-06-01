@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Parking</string>
+    <string name="title_activity_maps">Car parks</string>
+    <string name="servicedesc">servicedesc</string>
+    <string name="aiddescription">aiddescription</string>
+    <string name="id_badge">client numéro 12234232</string>
+
+</resources>
+
