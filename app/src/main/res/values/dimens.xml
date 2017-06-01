@@ -3,4 +3,6 @@
     <dimen name="parking_name_text_size">18sp</dimen>
     <dimen name="parking_address_margin_top">8dp</dimen>
     <dimen name="parking_success_big_icon_size">200dp</dimen>
+    <dimen name="parking_adress_margin_bottom">30dp</dimen>
+    <dimen name="parking_ticket_details_margin">30dp</dimen>
 </resources>

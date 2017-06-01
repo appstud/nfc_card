@@ -10,6 +10,10 @@
     <string name="parking_address">1 Place des Carmes, 31000 Toulouse, France</string>
     <string name="parking_success">Succès !</string>
     <string name="parking_barrier">La barrière va s\'ouvrir</string>
+    <string name="parking_entry_hour">Heure d\'arrivée : 12h00</string>
+    <string name="parking_exit_hour">Heure de sortie : 14h00</string>
+    <string name="parking_price">Tarif : 3,40€</string>
+    <string name="parking_get_invoice">Obtenir la facture</string>
 
 </resources>
 

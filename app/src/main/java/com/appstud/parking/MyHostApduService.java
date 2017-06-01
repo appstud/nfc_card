@@ -5,11 +5,15 @@ import android.nfc.cardemulation.HostApduService;
 import android.os.Bundle;
 import android.util.Log;
 
+
 public class MyHostApduService extends HostApduService {
 
+    public static final String IS_PARKING_EXIT = "IS_PARKING_EXIT";
     private int messageCounter = 0;
     private static String OK = "client 123";
     private static String NOK = "Nothing to say";
+
+    private static boolean exit = false;
 
     @Override
     public byte[] processCommandApdu(byte[] apdu, Bundle extras) {
@@ -41,8 +45,13 @@ public class MyHostApduService extends HostApduService {
     }
 
     private void alertApp() {
+
         Intent intent = new Intent();
         intent.setAction(getString(R.string.broadcast_notification_type));
+
+        intent.putExtra(IS_PARKING_EXIT, exit);
+        exit = !exit;
+
         sendBroadcast(intent);
 
 
