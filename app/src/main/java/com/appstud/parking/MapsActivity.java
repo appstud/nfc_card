@@ -3,6 +3,7 @@ package com.appstud.parking;
 import android.Manifest;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
+import android.graphics.Bitmap;
 import android.nfc.NfcAdapter;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -11,10 +12,14 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.animation.GlideAnimation;
+import com.bumptech.glide.request.target.SimpleTarget;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.Marker;
@@ -185,28 +190,47 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             String title = null;
             String type = null;
             String content = null;
+            String picture = null;
             try {
                 latitude = jsonPlace.getDouble("latitude");
                 longitude = jsonPlace.getDouble("longitude");
                 title = jsonPlace.getString("title");
                 type = jsonPlace.getString("type");
                 content = jsonPlace.getString("content");
+                picture = "";
             } catch (JSONException e) {
                 e.printStackTrace();
             }
 
-            PlaceModel placeTmp = new PlaceModel(
+            final PlaceModel placeTmp = new PlaceModel(
                     latitude,
                     longitude,
                     title,
                     type,
-                    content
+                    content,
+                    picture
             );
 
-            MarkerOptions options = new MarkerOptions().position(new LatLng(placeTmp.getLatitude(), placeTmp.getLongitude())).title(placeTmp.getName());
+            final MarkerOptions options = new MarkerOptions().position(new LatLng(placeTmp.getLatitude(), placeTmp.getLongitude())).title(placeTmp.getName());
 
-            Marker markerTmp = mMap.addMarker(options);
-            markerTmp.setTag(placeTmp);
+            int sizeMarkerPx = UIUtils.dpToPx(60, getResources().getDisplayMetrics());
+
+            int[] pictures = {R.drawable.capitole, R.drawable.carmes, R.drawable.esquirol};
+
+            Glide.with(getApplicationContext()).load(pictures[i % 3])
+                    .asBitmap()
+                    .centerCrop()
+                    .into(new SimpleTarget<Bitmap>(sizeMarkerPx, sizeMarkerPx) {
+                        @Override
+                        public void onResourceReady(Bitmap bitmap, GlideAnimation anim) {
+
+                            options.icon(BitmapDescriptorFactory.fromBitmap(bitmap));
+                            Marker markerTmp = mMap.addMarker(options);
+                            markerTmp.setTag(placeTmp);
+                        }
+                    });
+
+
         }
     }
 

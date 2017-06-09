@@ -10,13 +10,15 @@ public class PlaceModel implements Parcelable {
     private String name;
     private String type;
     private String content;
+    private String picture;
 
-    public PlaceModel(Double latitude, Double longitude, String name, String type, String content) {
+    public PlaceModel(Double latitude, Double longitude, String name, String type, String content, String picture) {
         this.latitude = latitude;
         this.longitude = longitude;
         this.name = name;
         this.type = type;
         this.content = content;
+        this.picture = picture;
     }
 
     public Double getLatitude() {
@@ -59,6 +61,10 @@ public class PlaceModel implements Parcelable {
         this.content = content;
     }
 
+    public String getPicture() {
+        return picture;
+    }
+
     @Override
     public String toString() {
         return "PlaceModel{" +
@@ -67,6 +73,7 @@ public class PlaceModel implements Parcelable {
                 ", latitude='" + latitude + '\'' +
                 ", longitude='" + longitude + '\'' +
                 ", type='" + type + '\'' +
+                ", picture='" + picture + '\'' +
                 '}';
     }
 
@@ -82,6 +89,7 @@ public class PlaceModel implements Parcelable {
         dest.writeString(this.name);
         dest.writeString(this.type);
         dest.writeString(this.content);
+        dest.writeString(this.picture);
     }
 
     protected PlaceModel(Parcel in) {
@@ -90,6 +98,7 @@ public class PlaceModel implements Parcelable {
         this.name = in.readString();
         this.type = in.readString();
         this.content = in.readString();
+        this.picture = in.readString();
     }
 
     public static final Creator<PlaceModel> CREATOR = new Creator<PlaceModel>() {
