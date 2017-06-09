@@ -8,12 +8,17 @@
     <string name="broadcast_notification_type">com.appstud.parking.MY_NOTIFICATION</string>
     <string name="parking_name">Parking des Carmes</string>
     <string name="parking_address">1 Place des Carmes, 31000 Toulouse, France</string>
-    <string name="parking_success">Succès !</string>
-    <string name="parking_barrier">La barrière va s\'ouvrir</string>
-    <string name="parking_entry_hour">Heure d\'arrivée : 12h00</string>
-    <string name="parking_exit_hour">Heure de sortie : 14h00</string>
+    <string name="parking_success">Success!</string>
+    <string name="parking_barrier">The gate will open</string>
+    <string name="parking_entry_hour">From: 10:00 am</string>
+    <string name="parking_exit_hour">To: 2:00 pm</string>
     <string name="parking_price">Tarif : 3,40€</string>
-    <string name="parking_get_invoice">Obtenir la facture</string>
+    <string name="parking_get_invoice">Get a receipt</string>
+
+    <!--    Permissions    -->
+    <string name="permission_rationale_location">Access to the location service is required to demonstrate the \'my location\' feature, which shows your current location on the map.</string>
+    <string name="location_permission_denied">This sample requires location permission to enable the \'my location\' layer. Please try again and grant access to use the location.\nIf the permission has been permanently denied, it can be enabled from the System Settings &gt; Apps &gt; \'Google Maps API Demos\'.</string>
+    <string name="permission_required_toast">Location permission is required for this demo.</string>
 
 </resources>
 

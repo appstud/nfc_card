@@ -38,7 +38,10 @@
         <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps"
-            android:theme="@style/AppTheme">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -61,6 +64,8 @@
 
         <activity
             android:name=".NFCActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
             android:label="@string/title_activity_nfc"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
