@@ -19,6 +19,20 @@
     <string name="permission_rationale_location">Access to the location service is required to demonstrate the \'my location\' feature, which shows your current location on the map.</string>
     <string name="location_permission_denied">This sample requires location permission to enable the \'my location\' layer. Please try again and grant access to use the location.\nIf the permission has been permanently denied, it can be enabled from the System Settings &gt; Apps &gt; \'Google Maps API Demos\'.</string>
     <string name="permission_required_toast">Location permission is required for this demo.</string>
+    <string name="close">close</string>
+    <string name="welcome">Welcome</string>
+    <string name="entry_line_1">Great, the gate will open!</string>
+    <string name="entry_line_2">You can park your car.</string>
+    <string name="get_parking_receipt">Get parking receipt</string>
+    <string name="total">Total</string>
+    <string name="exit_price">3€40</string>
+    <string name="entry_hour">Entry hour</string>
+    <string name="entry_hour_value">3:30pm</string>
+    <string name="exit_hour">Exit time</string>
+    <string name="exit_hour_value">5:00pm</string>
+    <string name="time_spent">Time spent</string>
+    <string name="time_spent_value">1:30</string>
+    <string name="get_parking_receipt_toast">Work in progress</string>
 
 </resources>
 
