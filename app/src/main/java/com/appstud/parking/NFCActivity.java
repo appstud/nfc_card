@@ -3,6 +3,7 @@ package com.appstud.parking;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -20,6 +21,10 @@ public class NFCActivity extends AppCompatActivity {
     @BindView(R.id.entry_description)
     LinearLayout entryDescription;
 
+    @BindView(R.id.parking_big_picture)
+    ImageView parkingEntryPicture;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,9 +34,11 @@ public class NFCActivity extends AppCompatActivity {
         if (isParkingExit()) {
             exitDescription.setVisibility(View.VISIBLE);
             entryDescription.setVisibility(View.GONE);
+            parkingEntryPicture.setImageResource(R.drawable.exit);
         } else {
             exitDescription.setVisibility(View.GONE);
             entryDescription.setVisibility(View.VISIBLE);
+            parkingEntryPicture.setImageResource(R.drawable.entry);
         }
     }
 
