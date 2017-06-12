@@ -23,6 +23,54 @@
       "type": "PARKING",
       "content": "",
       "address": "11 place du Capitole"
+    },
+    {
+      "latitude": 48.843131,
+      "longitude": 2.324159,
+      "title": "Parking Tour Montparnasse",
+      "type": "PARKING",
+      "content": "",
+      "address": "11 rue de l'Arrivée"
+    },
+    {
+      "latitude": 48.841324,
+      "longitude": 2.331712,
+      "title": "Parking Indigo",
+      "type": "PARKING",
+      "content": "",
+      "address": "120 Boulevard du Montparnasse"
+    },
+    {
+      "latitude": 48.843160,
+      "longitude": 2.316692,
+      "title": "Parking Zenpark Paris",
+      "type": "PARKING",
+      "content": "",
+      "address": "6 Rue Dulac"
+    },
+    {
+      "latitude": 48.863206,
+      "longitude": 2.340237,
+      "title": "Parking Indigo",
+      "type": "PARKING",
+      "content": "",
+      "address": "14 Rue Croix des Petits Champs"
+    },
+    {
+      "latitude": 48.866467,
+      "longitude": 2.336975,
+      "title": "Ector Parking",
+      "type": "PARKING",
+      "content": "",
+      "address": "10 Rue Villedo"
+    },
+    {
+      "latitude": 48.859395,
+      "longitude": 2.344185,
+      "title": "Qpark",
+      "type": "PARKING",
+      "content": "",
+      "address": "2 Rue Boucher"
     }
   ]
 }

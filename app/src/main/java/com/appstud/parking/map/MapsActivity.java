@@ -5,6 +5,9 @@ import android.content.Context;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
+import android.location.Criteria;
+import android.location.Location;
+import android.location.LocationManager;
 import android.nfc.NfcAdapter;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -42,6 +45,8 @@ import java.io.InputStream;
 import butterknife.ButterKnife;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
+import static com.appstud.parking.R.id.map;
+
 public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback,
         ActivityCompat.OnRequestPermissionsResultCallback, GoogleMap.OnMarkerClickListener {
 
@@ -53,6 +58,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
      */
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1;
     static final String PARKING_DETAILS_KEY = "PARKING_DETAILS_KEY";
+    private static final float ZOOM_LEVEL = 15;
 
     /**
      * Flag indicating whether a requested permission has been denied after returning in
@@ -75,7 +81,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         loadParkingPlaces();
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map);
+                .findFragmentById(map);
         mapFragment.getMapAsync(this);
     }
 
@@ -108,7 +114,6 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         mMap = googleMap;
 
         mMap.setOnMarkerClickListener(this);
-
         int paddingInPixels = UIUtils.dpToPx(56, getResources().getDisplayMetrics());
         mMap.setPadding(0, paddingInPixels, 0, paddingInPixels);
         try {
@@ -124,11 +129,6 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         } catch (Resources.NotFoundException e) {
             Log.e(TAG, "Can't find style. Error: ", e);
         }
-
-        // move the camera to Toulouse
-        LatLng toulouse = new LatLng(43.604408, 1.446228);
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(toulouse));
-        mMap.moveCamera(CameraUpdateFactory.zoomTo(15));
 
         addParkingMarkers();
 
@@ -149,6 +149,15 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         } else if (mMap != null) {
             // Access to the location has been granted to the app.
             mMap.setMyLocationEnabled(true);
+
+
+            LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+            Criteria criteria = new Criteria();
+
+            Location location = locationManager.getLastKnownLocation(locationManager.getBestProvider(criteria, false));
+            if (location != null) {
+                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(location.getLatitude(), location.getLongitude()), ZOOM_LEVEL));
+            }
         }
     }
 
@@ -177,6 +186,11 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             // Permission was not granted, display error dialog.
             showMissingPermissionError();
             mPermissionDenied = false;
+            //        // move the camera to Toulouse
+//        LatLng toulouse = new LatLng(43.604408, 1.446228);
+//        mMap.moveCamera(CameraUpdateFactory.newLatLng(toulouse));
+//        mMap.moveCamera(CameraUpdateFactory.zoomTo(ZOOM_LEVEL));
+
         }
     }
 
