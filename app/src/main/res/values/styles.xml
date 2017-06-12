@@ -8,6 +8,9 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="TitleText">
+        <item name="fontPath">Avenir-Medium.ttf</item>
+    </style>
 
     <style name="AppBottomSheetDialogTheme"
            parent="Theme.Design.Light.BottomSheetDialog">

@@ -1,6 +1,7 @@
 package com.appstud.parking.map;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
@@ -13,8 +14,8 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
-import com.appstud.parking.data.model.PlaceModel;
 import com.appstud.parking.R;
+import com.appstud.parking.data.model.PlaceModel;
 import com.appstud.parking.utils.FileHelper;
 import com.appstud.parking.utils.PermissionUtils;
 import com.appstud.parking.utils.UIUtils;
@@ -39,6 +40,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 import butterknife.ButterKnife;
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback,
         ActivityCompat.OnRequestPermissionsResultCallback, GoogleMap.OnMarkerClickListener {
@@ -270,5 +272,10 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         }
 
         return true;
+    }
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
     }
 }
