@@ -203,20 +203,9 @@
 
         <Button
             android:id="@+id/parking_receipt_btn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/CallToAction"
 
-            android:layout_marginBottom="@dimen/padding_medium"
-            android:layout_marginLeft="@dimen/padding_large"
-            android:layout_marginRight="@dimen/padding_large"
-            android:layout_marginTop="@dimen/padding_medium"
-
-            android:background="@drawable/blue_round_button"
             android:text="@string/get_parking_receipt"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="@dimen/text_size_regular"
-
             />
     </LinearLayout>
 

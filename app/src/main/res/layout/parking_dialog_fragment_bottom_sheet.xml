@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:paddingLeft="@dimen/padding_sheet"
+    android:paddingRight="@dimen/padding_sheet"
+
+    android:paddingTop="@dimen/padding_sheet"
+    >
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/top_round_rectangle"
+        android:orientation="vertical"
+        android:padding="@dimen/padding_sheet"
+        >
+
+        <ImageView
+            android:id="@+id/arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/padding_medium"
+            android:tint="@color/purple"
+            app:srcCompat="@drawable/ic_arrow_downward_black_24dp"
+            />
+
+        <TextView
+            android:id="@+id/parking_details_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/arrow"
+            android:layout_toLeftOf="@+id/parking_details_picture"
+            android:text="Parking des Carmes"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/text_size_large"
+            />
+
+        <TextView
+            android:id="@+id/parking_details_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/parking_details_name"
+            android:layout_marginTop="@dimen/padding_small"
+            android:layout_toLeftOf="@+id/parking_details_picture"
+            android:text="1 place des carmes"
+            android:textColor="@android:color/black"
+
+            android:textSize="@dimen/text_size_small"
+            />
+
+        <ImageView
+            android:id="@+id/parking_details_picture"
+            android:layout_width="@dimen/parking_details_picture_size"
+            android:layout_height="@dimen/parking_details_picture_size"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/arrow"
+            android:background="@drawable/white_round"
+            app:srcCompat="@drawable/carmes"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/parking_details_address"
+            android:layout_marginTop="@dimen/padding_medium"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/parking_details_price_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/parking_details_price_title"
+                android:textAllCaps="true"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_size_regular"/>
+
+            <LinearLayout
+                style="@style/ParkingPriceLayout"
+                android:layout_width="match_parent"
+
+
+                android:layout_height="wrap_content"
+
+                android:orientation="horizontal"
+                >
+
+                <TextView
+                    style="@style/ParkingPrice"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/parking_details_first_price_label"/>
+
+                <TextView
+                    style="@style/ParkingPrice"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+
+                    android:text="@string/parking_details_first_price_value"/>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/ParkingPriceLayout"
+                android:layout_width="match_parent"
+
+
+                android:layout_height="wrap_content"
+
+                android:orientation="horizontal"
+                >
+
+                <TextView
+                    style="@style/ParkingPrice"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/parking_details_second_price_label"/>
+
+                <TextView
+                    style="@style/ParkingPrice"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+
+                    android:text="@string/parking_details_second_price_value"/>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/ParkingPriceLayout"
+                android:layout_width="match_parent"
+
+
+                android:layout_height="wrap_content"
+
+                android:orientation="horizontal"
+                >
+
+                <TextView
+                    style="@style/ParkingPrice"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/parking_details_third_price_label"/>
+
+                <TextView
+                    style="@style/ParkingPrice"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+
+                    android:text="@string/parking_details_third_price_value"/>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/ParkingPriceLayout"
+                android:layout_width="match_parent"
+
+
+                android:layout_height="wrap_content"
+
+                android:orientation="horizontal"
+                >
+
+                <TextView
+                    style="@style/ParkingPrice"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/parking_details_fourth_price_label"/>
+
+                <TextView
+                    style="@style/ParkingPrice"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+
+                    android:text="@string/parking_details_fourth_price_value"/>
+            </LinearLayout>
+
+            <Button
+                style="@style/CallToAction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/go_to_parking"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/use_your_phone_on_parking_station"
+                android:textColor="@color/purple"
+                android:textSize="@dimen/text_size_small"
+                />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

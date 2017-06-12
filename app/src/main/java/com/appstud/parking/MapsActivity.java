@@ -7,6 +7,7 @@ import android.graphics.Bitmap;
 import android.nfc.NfcAdapter;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.widget.BottomSheetDialogFragment;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -35,7 +36,7 @@ import java.io.InputStream;
 import butterknife.ButterKnife;
 
 public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback,
-        ActivityCompat.OnRequestPermissionsResultCallback {
+        ActivityCompat.OnRequestPermissionsResultCallback, GoogleMap.OnMarkerClickListener {
 
     private static final String TAG = MapsActivity.class.toString();
     /**
@@ -97,6 +98,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+        mMap.setOnMarkerClickListener(this);
+
         int paddingInPixels = UIUtils.dpToPx(56, getResources().getDisplayMetrics());
         mMap.setPadding(0, paddingInPixels, 0, paddingInPixels);
         try {
@@ -230,7 +233,6 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                         }
                     });
 
-
         }
     }
 
@@ -240,5 +242,17 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         NfcAdapter nfcAdapter = NfcAdapter.getDefaultAdapter(this);
         nfcAdapter.disableReaderMode(this);
         nfcAdapter.disableForegroundDispatch(this);
+    }
+
+    @Override
+    public boolean onMarkerClick(Marker marker) {
+        PlaceModel tmpPlaceModel = (PlaceModel) marker.getTag();
+
+        if (tmpPlaceModel.getContent() != null) {
+            BottomSheetDialogFragment bottomSheetDialogFragment = new ParkingDetailsBottomSheetDialogFragment();
+            bottomSheetDialogFragment.show(getSupportFragmentManager(), bottomSheetDialogFragment.getTag());
+        }
+
+        return false;
     }
 }

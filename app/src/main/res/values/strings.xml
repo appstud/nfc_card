@@ -33,6 +33,17 @@
     <string name="time_spent">Time spent</string>
     <string name="time_spent_value">1:30</string>
     <string name="get_parking_receipt_toast">Work in progress</string>
+    <string name="parking_details_price_title">Tarifs</string>
+    <string name="parking_details_first_price_label">15 Minutes</string>
+    <string name="parking_details_first_price_value">0,70€</string>
+    <string name="parking_details_second_price_label">30 Minutes</string>
+    <string name="parking_details_second_price_value">1,40 €</string>
+    <string name="parking_details_third_price_label">45 Minutes</string>
+    <string name="parking_details_third_price_value">2,30 €</string>
+    <string name="parking_details_fourth_price_label">1 heure</string>
+    <string name="parking_details_fourth_price_value">2,70 €</string>
+    <string name="go_to_parking">J\'y vais</string>
+    <string name="use_your_phone_on_parking_station">Passez votre téléphone devant la borne du parking dès votre arrivée</string>
 
 </resources>
 

@@ -7,11 +7,14 @@
     <dimen name="parking_ticket_details_margin">30dp</dimen>
     <dimen name="close_icon_size">32dp</dimen>
     <dimen name="padding_medium">16dp</dimen>
+    <dimen name="padding_sheet">24dp</dimen>
     <dimen name="text_size_regular">16sp</dimen>
     <dimen name="padding_large">32dp</dimen>
-    <dimen name="padding_xlarge">48dp</dimen>
     <dimen name="text_size_large">24sp</dimen>
     <dimen name="padding_small">8dp</dimen>
     <dimen name="text_size_small">12sp</dimen>
     <dimen name="round_button_radius">32dp</dimen>
+    <dimen name="round_sheet_radius">12dp</dimen>
+    <dimen name="parking_details_picture_size">64dp</dimen>
+
 </resources>
