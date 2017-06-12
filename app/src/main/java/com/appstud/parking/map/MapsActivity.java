@@ -104,6 +104,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+
         mMap.setOnMarkerClickListener(this);
 
         int paddingInPixels = UIUtils.dpToPx(56, getResources().getDisplayMetrics());
@@ -186,6 +187,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     }
 
     private void addParkingMarkers() {
+        int[] pictures = {R.drawable.capitole, R.drawable.carmes, R.drawable.esquirol};
+
         for (int i = 0; i < listPlaces.length(); i++) {
             JSONObject jsonPlace = new JSONObject();
             try {
@@ -200,13 +203,16 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             String type = null;
             String content = null;
             String picture = null;
+            String address = null;
             try {
                 latitude = jsonPlace.getDouble("latitude");
                 longitude = jsonPlace.getDouble("longitude");
                 title = jsonPlace.getString("title");
                 type = jsonPlace.getString("type");
                 content = jsonPlace.getString("content");
-                picture = "";
+
+                picture = String.valueOf(pictures[i % 3]);
+                address = jsonPlace.getString("address");
             } catch (JSONException e) {
                 e.printStackTrace();
             }
@@ -217,14 +223,14 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                     title,
                     type,
                     content,
-                    picture
+                    picture,
+                    address
             );
 
             final MarkerOptions options = new MarkerOptions().position(new LatLng(placeTmp.getLatitude(), placeTmp.getLongitude())).title(placeTmp.getName());
 
             int sizeMarkerPx = UIUtils.dpToPx(60, getResources().getDisplayMetrics());
 
-            int[] pictures = {R.drawable.capitole, R.drawable.carmes, R.drawable.esquirol};
 
             Glide.with(getApplicationContext()).load(pictures[i % 3])
                     .asBitmap()
@@ -263,6 +269,6 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             bottomSheetDialogFragment.show(getSupportFragmentManager(), bottomSheetDialogFragment.getTag());
         }
 
-        return false;
+        return true;
     }
 }

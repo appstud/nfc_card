@@ -2,23 +2,34 @@ package com.appstud.parking.map;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomSheetBehavior;
 import android.support.design.widget.BottomSheetDialogFragment;
 import android.support.design.widget.CoordinatorLayout;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.appstud.parking.R;
 import com.appstud.parking.data.model.PlaceModel;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-import static com.appstud.parking.R.style.AppTheme;
 import static com.appstud.parking.map.MapsActivity.PARKING_DETAILS_KEY;
 
 public class ParkingDetailsBottomSheetDialogFragment extends BottomSheetDialogFragment {
+
+    @BindView(R.id.parking_details_name)
+    TextView name;
+    @BindView(R.id.parking_details_address)
+    TextView address;
+    @BindView(R.id.parking_details_picture)
+    ImageView picture;
+
 
     private BottomSheetBehavior.BottomSheetCallback mBottomSheetBehaviorCallback = new BottomSheetBehavior.BottomSheetCallback() {
 
@@ -49,6 +60,10 @@ public class ParkingDetailsBottomSheetDialogFragment extends BottomSheetDialogFr
         startActivity(mapIntent);
     }
 
+    @OnClick(R.id.arrow)
+    void dismissModal() {
+        this.dismiss();
+    }
 
     @Override
     public void setupDialog(Dialog dialog, int style) {
@@ -57,6 +72,14 @@ public class ParkingDetailsBottomSheetDialogFragment extends BottomSheetDialogFr
         ButterKnife.bind(this, contentView);
 
         dialog.setContentView(contentView);
+
+        name.setText(getPlace().getName());
+        address.setText(getPlace().getAddress());
+        int pictureResource = Integer.parseInt(getPlace().getPicture());
+        Drawable drawable = getResources().getDrawable(pictureResource);
+        if (null != drawable) {
+            picture.setImageDrawable(drawable);
+        }
 
         CoordinatorLayout.LayoutParams params = (CoordinatorLayout.LayoutParams) ((View) contentView.getParent()).getLayoutParams();
         CoordinatorLayout.Behavior behavior = params.getBehavior();
