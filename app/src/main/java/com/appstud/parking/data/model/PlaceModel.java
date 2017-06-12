@@ -1,4 +1,4 @@
-package com.appstud.parking;
+package com.appstud.parking.data.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;

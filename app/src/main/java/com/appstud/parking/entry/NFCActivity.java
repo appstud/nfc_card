@@ -1,4 +1,4 @@
-package com.appstud.parking;
+package com.appstud.parking.entry;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -7,11 +7,13 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.appstud.parking.R;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-import static com.appstud.parking.MyHostApduService.IS_PARKING_EXIT;
+import static com.appstud.parking.nfcservice.MyHostApduService.IS_PARKING_EXIT;
 
 public class NFCActivity extends AppCompatActivity {
 

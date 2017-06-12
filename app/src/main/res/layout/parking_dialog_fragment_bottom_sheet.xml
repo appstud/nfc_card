@@ -193,6 +193,7 @@
             </LinearLayout>
 
             <Button
+                android:id="@+id/parking_details_cta"
                 style="@style/CallToAction"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

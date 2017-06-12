@@ -1,15 +1,19 @@
-package com.appstud.parking;
+package com.appstud.parking.utils;
+
+import android.util.Log;
 
 import java.io.IOException;
 import java.io.InputStream;
 
-/**
- * Created by stephane on 23/11/2016.
- */
-
 public class FileHelper {
+
+    private static final String TAG = FileHelper.class.toString();
+
+    private FileHelper() {
+    }
+
     public static String loadStringFromFile(InputStream is) {
-        String result = null;
+        String result;
         try {
 
             int size = is.available();
@@ -24,7 +28,7 @@ public class FileHelper {
 
 
         } catch (IOException ex) {
-            ex.printStackTrace();
+            Log.e(TAG, "loadStringFromFile: " + ex.getMessage());
             return null;
         }
         return result;

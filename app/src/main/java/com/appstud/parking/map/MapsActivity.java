@@ -1,4 +1,4 @@
-package com.appstud.parking;
+package com.appstud.parking.map;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
@@ -13,6 +13,11 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
+import com.appstud.parking.data.model.PlaceModel;
+import com.appstud.parking.R;
+import com.appstud.parking.utils.FileHelper;
+import com.appstud.parking.utils.PermissionUtils;
+import com.appstud.parking.utils.UIUtils;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
@@ -45,6 +50,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
      * @see #onRequestPermissionsResult(int, String[], int[])
      */
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1;
+    static final String PARKING_DETAILS_KEY = "PARKING_DETAILS_KEY";
 
     /**
      * Flag indicating whether a requested permission has been denied after returning in
@@ -250,6 +256,10 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         if (tmpPlaceModel.getContent() != null) {
             BottomSheetDialogFragment bottomSheetDialogFragment = new ParkingDetailsBottomSheetDialogFragment();
+
+            Bundle arguments = new Bundle();
+            arguments.putParcelable(PARKING_DETAILS_KEY, tmpPlaceModel);
+            bottomSheetDialogFragment.setArguments(arguments);
             bottomSheetDialogFragment.show(getSupportFragmentManager(), bottomSheetDialogFragment.getTag());
         }
 

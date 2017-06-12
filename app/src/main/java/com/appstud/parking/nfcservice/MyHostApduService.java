@@ -1,37 +1,40 @@
-package com.appstud.parking;
+package com.appstud.parking.nfcservice;
 
 import android.content.Intent;
 import android.nfc.cardemulation.HostApduService;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.appstud.parking.R;
+
 
 public class MyHostApduService extends HostApduService {
 
     public static final String IS_PARKING_EXIT = "IS_PARKING_EXIT";
-    private static String OK = "client 123";
-    private static String NOK = "Nothing to say";
+    private static final String TAG = MyHostApduService.class.toString();
+    private static String OK_CLIENT = "client 123";
+    private static String NOK_CLIENT = "Nothing to say";
 
     private static boolean exit = false;
 
     @Override
     public byte[] processCommandApdu(byte[] apdu, Bundle extras) {
         if (selectAidApdu(apdu)) {
-            Log.i("HCEDEMO", OK);
+            Log.i(TAG, OK_CLIENT);
             alertApp();
             return getMessage();
         } else {
-            Log.i("HCEDEMO", NOK + " Received apdu: " + new String(apdu));
+            Log.i(TAG, NOK_CLIENT + " Received apdu: " + new String(apdu));
             return getNextMessage();
         }
     }
 
     private byte[] getMessage() {
-        return OK.getBytes();
+        return OK_CLIENT.getBytes();
     }
 
     private byte[] getNextMessage() {
-        return NOK.getBytes();
+        return NOK_CLIENT.getBytes();
     }
 
     private boolean selectAidApdu(byte[] apdu) {
@@ -40,7 +43,7 @@ public class MyHostApduService extends HostApduService {
 
     @Override
     public void onDeactivated(int reason) {
-        Log.i("HCEDEMO", "Communication NFC Deactivated: " + reason);
+        Log.i(TAG, "Communication NFC Deactivated: " + reason);
     }
 
     private void alertApp() {
