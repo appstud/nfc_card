@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.appstud.parking.R;
@@ -26,6 +27,8 @@ public class NFCActivity extends AppCompatActivity {
     @BindView(R.id.parking_big_picture)
     ImageView parkingEntryPicture;
 
+    @BindView(R.id.title)
+    TextView title;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,10 +37,12 @@ public class NFCActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         if (isParkingExit()) {
+            title.setText(R.string.goodbye);
             exitDescription.setVisibility(View.VISIBLE);
             entryDescription.setVisibility(View.GONE);
             parkingEntryPicture.setImageResource(R.drawable.exit);
         } else {
+            title.setText(R.string.welcome);
             exitDescription.setVisibility(View.GONE);
             entryDescription.setVisibility(View.VISIBLE);
             parkingEntryPicture.setImageResource(R.drawable.entry);

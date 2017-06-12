@@ -37,7 +37,6 @@
 
         <activity
             android:name=".map.MapsActivity"
-            android:label="@string/title_activity_maps"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.Fullscreen"
@@ -64,7 +63,6 @@
 
         <activity
             android:name=".entry.NFCActivity"
-            android:label="@string/title_activity_nfc"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>

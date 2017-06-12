@@ -1,38 +1,27 @@
 <resources>
     <string name="app_name">Parking</string>
-    <string name="title_activity_maps">Car parks</string>
     <string name="servicedesc">servicedesc</string>
     <string name="aiddescription">aiddescription</string>
-    <string name="id_badge">client numéro 12234232</string>
-    <string name="title_activity_nfc">NFCActivity</string>
     <string name="broadcast_notification_type">com.appstud.parking.MY_NOTIFICATION</string>
-    <string name="parking_name">Parking des Carmes</string>
-    <string name="parking_address">1 Place des Carmes, 31000 Toulouse, France</string>
-    <string name="parking_success">Success!</string>
-    <string name="parking_barrier">The gate will open</string>
-    <string name="parking_entry_hour">From: 10:00 am</string>
-    <string name="parking_exit_hour">To: 2:00 pm</string>
-    <string name="parking_price">Tarif : 3,40€</string>
-    <string name="parking_get_invoice">Get a receipt</string>
 
     <!--    Permissions    -->
-    <string name="permission_rationale_location">Access to the location service is required to demonstrate the \'my location\' feature, which shows your current location on the map.</string>
-    <string name="location_permission_denied">This sample requires location permission to enable the \'my location\' layer. Please try again and grant access to use the location.\nIf the permission has been permanently denied, it can be enabled from the System Settings &gt; Apps &gt; \'Google Maps API Demos\'.</string>
-    <string name="permission_required_toast">Location permission is required for this demo.</string>
-    <string name="close">close</string>
-    <string name="welcome">Welcome</string>
-    <string name="entry_line_1">Great, the gate will open!</string>
-    <string name="entry_line_2">You can park your car.</string>
-    <string name="get_parking_receipt">Get parking receipt</string>
+    <string name="permission_rationale_location">Veuillez activer la géolocalisation pour être géolocalisé sur la carte.</string>
+    <string name="location_permission_denied">Cette application nécessite la permission de géolocalisation. Veuillez réessayer et accorder l\'autorisation de géolocalisation.\nSi cette permission a été refusée, elle peut être réaccordée depuis Paramètres Système … Applications … \'Parking\'.</string>
+    <string name="permission_required_toast">La permission de géolocalisation est requise pour cette application</string>
+    <string name="close">fermer</string>
+    <string name="welcome">Bienvenue</string>
+    <string name="entry_line_1">Génial, la barrière est ouverte !</string>
+    <string name="entry_line_2">Vous pouvez garer votre voiture.</string>
+    <string name="get_parking_receipt">Obtenir la facture</string>
     <string name="total">Total</string>
     <string name="exit_price">3€40</string>
-    <string name="entry_hour">Entry hour</string>
-    <string name="entry_hour_value">3:30pm</string>
-    <string name="exit_hour">Exit time</string>
-    <string name="exit_hour_value">5:00pm</string>
-    <string name="time_spent">Time spent</string>
-    <string name="time_spent_value">1:30</string>
-    <string name="get_parking_receipt_toast">Work in progress</string>
+    <string name="entry_hour">Heure d\'entrée</string>
+    <string name="entry_hour_value">15:30</string>
+    <string name="exit_hour">Heure de sortie</string>
+    <string name="exit_hour_value">17h00</string>
+    <string name="time_spent">Temps passé</string>
+    <string name="time_spent_value">1h30</string>
+    <string name="get_parking_receipt_toast">Non implémenté</string>
     <string name="parking_details_price_title">Tarifs</string>
     <string name="parking_details_first_price_label">15 Minutes</string>
     <string name="parking_details_first_price_value">0,70€</string>
@@ -40,10 +29,11 @@
     <string name="parking_details_second_price_value">1,40 €</string>
     <string name="parking_details_third_price_label">45 Minutes</string>
     <string name="parking_details_third_price_value">2,30 €</string>
-    <string name="parking_details_fourth_price_label">1 heure</string>
+    <string name="parking_details_fourth_price_label">1 Heure</string>
     <string name="parking_details_fourth_price_value">2,70 €</string>
     <string name="go_to_parking">J\'y vais</string>
     <string name="use_your_phone_on_parking_station">Passez votre téléphone devant la borne du parking dès votre arrivée</string>
+    <string name="goodbye">À bientôt</string>
 
 </resources>
 
